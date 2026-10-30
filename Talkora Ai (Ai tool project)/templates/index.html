@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talkora AI - Smart AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <span class="logo">✦</span> Talkora AI
+        </div>
+
+        <button class="new-chat" id="newChat">＋ New Chat</button>
+
+        <p class="section-label">YOUR CONVERSATIONS</p>
+        <div class="chat-list" id="chatList"></div>
+
+        <div class="sidebar-footer">
+            <span>✦</span> Powered by Google Gemini
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn">☰</button>
+            <strong>Talkora AI</strong>
+            <span class="model-status">● Gemini AI</span>
+        </header>
+
+        <section class="messages" id="messages">
+
+            <div class="welcome" id="welcome">
+                <div class="welcome-logo">✦</div>
+                <h1>Meet Talkora AI</h1>
+                <p>Your ideas, questions and creativity start here.</p>
+
+                <div class="suggestions">
+                    <button data-prompt="Introduce yourself">
+                        Introduce yourself
+                    </button>
+
+                    <button data-prompt="Teach me Python from basics">
+                        Learn Python
+                    </button>
+
+                    <button data-prompt="Give me 5 creative project ideas">
+                        Project ideas
+                    </button>
+
+                    <button data-prompt="Write a professional email">
+                        Write an email
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="composer-wrap">
+            <form class="composer" id="chatForm">
+
+                <textarea
+                    id="prompt"
+                    placeholder="Message Talkora AI..."
+                    rows="1"
+                    required
+                ></textarea>
+
+                <div class="composer-bottom">
+                    <span>AI can make mistakes. Verify important information.</span>
+                    <button type="submit" id="sendBtn">↑</button>
+                </div>
+
+            </form>
+
+            <p class="footer-note">
+                Made with Python, Flask and Google Gemini API
+            </p>
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
